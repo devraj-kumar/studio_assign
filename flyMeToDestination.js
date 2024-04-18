@@ -1,32 +1,23 @@
-// Function Declareation
-// Function to calculate the minimum number of planes required to reach the last airport
-const minimumRequiredPlanes = (array) => {
-    
-    // Initializing an array to store the minimum planes required for each airport
-    const Requiredplanes = new Array(array.length).fill(Number.MAX_SAFE_INTEGER); 
+function minPlanesRequired(fuel) {
+    let planesNeeded = 0;
+    let maxFuel = fuel[0]; // maximum reachable airport with current plane
 
-    // We start from the first airport, so no planes required to reach itself
-    Requiredplanes[0] = 0;
-
-    // Iterating through each airport
-    for (let i = 0; i < array.length - 1; i++) {
-        
-        // Iterating through the reachable airports from the current airport
-        for (let j = i; j <= Math.min(i + array[i], array.length - 1); j++) {
-            
-            // Updating the minimum planes required for each reachable airport
-            Requiredplanes[j] = Math.min(Requiredplanes[j], Requiredplanes[i] + 1);
+    for (let i = 0; i < fuel.length; i++) {
+        if (i > maxFuel) {
+            // If the current airport cannot be reached with the current plane, hire another plane
+            if (maxFuel === i - 1) return -1; // If no plane can reach this airport, return -1
+            planesNeeded++;
+            maxFuel = i - 1; // Update the maximum reachable airport with the new plane
         }
+        maxFuel = Math.max(maxFuel, i + fuel[i]); // Update the maximum reachable airport with the current plane
     }
 
-    // If it's not possible to reach the last airport, return -1
-    return Requiredplanes[array.length - 1] === Number.MAX_SAFE_INTEGER ? -1 : Requiredplanes[array.length - 1];
+    return planesNeeded;
 }
 
-// Example arrays
-const firstArray = [2, 1, 2, 3, 1];
-const secondArray = [1, 6, 3, 4, 5, 0, 0, 0, 6];
+// Example usage:
+const fuelArray1 = [2, 1, 2, 3, 1];
+console.log(minPlanesRequired(fuelArray1)); // Output: 2
 
-// Printing the minimum planes required for each example
-console.log(`The minimum planes required for (${firstArray}): ${minimumRequiredPlanes(firstArray)}`); // Output: 2
-console.log(`The minimum planes required for (${secondArray}): ${minimumRequiredPlanes(secondArray)}`) // Output: 3
+const fuelArray2 = [1, 6, 3, 4, 5, 0, 0, 0, 6];
+console.log(minPlanesRequired(fuelArray2)); // Output: 3
