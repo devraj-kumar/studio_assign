@@ -1,0 +1,167 @@
+/* Styles for the main image */
+.mainImg {
+	max-width: -webkit-fill-available; /* Set maximum width to fill available space */
+	bottom: 0; /* Align to the bottom */
+    position: absolute; /* Position absolutely within its containing element */
+    margin-bottom: 50px; /* Add bottom margin */
+}
+
+/* Styles for the main container */
+.mainDiv {
+	height: 100vh; /* Set height to full viewport height */
+	padding-left: 100px; /* Add left padding */
+	padding-right: 100px; /* Add right padding */
+}
+
+/* Styles for the loading container */
+.loadingContainer {
+	padding-bottom: 200px; /* Add bottom padding */
+}
+
+/* Styles for the next container */
+.nextDiv {
+	float: left; /* Float left */
+	width: 50%; /* Set width to half of the parent container */
+	position: relative; /* Position relatively */
+	height: -webkit-fill-available; /* Set height to fill available space */
+}
+
+/* Styles for the loader container */
+.divLoader {
+	height: -webkit-fill-available; /* Set height to fill available space */
+	width: -webkit-fill-available; /* Set width to fill available space */
+	background-image: url("Blue umbrella.png"); /* Background image */
+	background-size: contain; /* Set background size to contain */
+	background-repeat: no-repeat; /* Disable background repeat */
+	background-position: center bottom; /* Position background */
+	display: flex; /* Display as flexbox */
+    justify-content: end; /* Align content to the end */
+    align-items: center; /* Align items to the center */
+    padding: 40px; /* Add padding */
+    flex-direction: column; /* Set flex direction to column */
+}
+
+/* Styles for the logo image */
+.logoImg {
+	height: 30px; /* Set height */
+}
+
+/* Styles for the loader image */
+.loaderImg {
+	height: 70px; /* Set height */
+	display: none; /* Hide by default */
+}
+
+/* Styles for the loader image button */
+.loaderImgBtn {
+	display: none; /* Hide by default */
+}
+
+/* Styles for the text container */
+.divText {
+	float: left; /* Float left */
+	width: 50%; /* Set width to half of the parent container */
+	height: -webkit-fill-available; /* Set height to fill available space */
+}
+
+/* Styles for the position container */
+.divPosition {
+	position: absolute; /* Position absolutely */
+    bottom: 0; /* Align to the bottom */
+    width: -webkit-fill-available; /* Set width to fill available space */
+    margin-bottom: 50px; /* Add bottom margin */
+    padding: 40px; /* Add padding */
+}
+
+/* Styles for the blue dot */
+.blueDot {
+	background-color: #80d0f1; /* Set background color */
+}
+
+/* Styles for the inner blue dot */
+.blueInnerDot {
+	background-color: #01a3e1; /* Set background color */
+}
+
+/* Styles for the yellow dot */
+.yellowDot {
+	background-color: #fcd867; /* Set background color */
+}
+
+/* Styles for the inner yellow dot */
+.yellowInnerDot {
+	background-color: #ffd041; /* Set background color */
+}
+
+/* Styles for the pink dot */
+.pinkDot {
+	background-color: #df8cbe; /* Set background color */
+}
+
+/* Styles for the inner pink dot */
+.pinkInnerDot {
+	background-color: #d1006e; /* Set background color */
+}
+
+/* Styles for the dots */
+.dot {
+  height: 25px; /* Set height */
+  width: 25px; /* Set width */
+  border-radius: 50%; /* Set border radius to make circular */
+  display: inline-block; /* Display as inline block */
+  margin-right: 10px; /* Add right margin */
+  display: flex; /* Display as flexbox */
+  justify-content: center; /* Align content to the center */
+  align-items: center; /* Align items to the center */
+}
+
+/* Styles for the inner dots */
+.innerDot {
+	height: 18px; /* Set height */
+  width: 18px; /* Set width */
+  border-radius: 50%; /* Set border radius to make circular */
+}
+
+/* Keyframes for rotation animation */
+@keyframes rotation {
+  from {
+    transform: rotate(0deg); /* Start rotation from 0 degrees */
+  }
+  to {
+    transform: rotate(359deg); /* Rotate to 359 degrees */
+  }
+}
+
+/* Styles for elements with 'rotate' class */
+.rotate {
+  animation: rotation 2s infinite linear; /* Apply rotation animation */
+}
+
+/* Styles for button text */
+.btnTxt {
+	width: -webkit-fill-available; /* Set width to fill available space */
+	text-align: center; /* Align text to the center */
+	padding: 15px; /* Add padding */
+}
+
+/* Styles for the close icon */
+.closeIcon {
+	display: none; /* Hide by default */
+}
+
+/* Styles for button */
+button {
+	width: -webkit-fill-available; /* Set width to fill available space */
+    background-color: #01a3e1; /* Set background color */
+    color: white; /* Set text color */
+    border: none; /* Remove border */
+    display: flex; /* Display as flexbox */
+    align-items: center; /* Align items to the center */
+    justify-content: start; /* Justify content to the start */
+    padding-left: 10px; /* Add left padding */
+}
+
+/* Override all font family to Arial */
+html * {
+	font-family: Arial !important;
+}
